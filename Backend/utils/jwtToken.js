@@ -13,6 +13,8 @@ export const genrateToken = (user, message, statusCode, res) => {
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ), //? (hour, min, second, milisecond)//! 7 divas paci cookies expire thai jase.
       httpOnly : true,
+      secure:true,
+      sameSite:"None",
     })
     .json({
       success: true,
