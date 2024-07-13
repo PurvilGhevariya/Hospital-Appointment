@@ -158,6 +158,8 @@ export const logoutAdmin = catchAsyncErrors(async(req, res, next )=>{
   res.status(200).cookie("adminToken", "", {
     httpOnly : true,
     expires : new Date(Date.now()),
+    secure:true,
+    sameSite:"None",
   }).json({
     success: true,
     message: "Admin Log Out Successfully!",
